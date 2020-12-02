@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rstaurant_ui_app/pages/login.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -6,6 +7,13 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  void _loginpage({BuildContext context, bool fullScreenDialog = false}) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            fullscreenDialog: fullScreenDialog, builder: (context) => Login()));
+  }
+
   final _formKey = GlobalKey<FormState>();
 
   String _validateemail(String value) {
@@ -27,6 +35,7 @@ class _SignUpState extends State<SignUp> {
   void _submitOrder() {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
+      _loginpage(context: context, fullScreenDialog: true);
     }
   }
 
@@ -52,107 +61,119 @@ class _SignUpState extends State<SignUp> {
         ),
         body: SafeArea(
             child: Container(
-          decoration: BoxDecoration(color: Colors.yellow.shade900),
-          //padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-          child: Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 0.0),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(0.0),
-                  topRight: Radius.circular(100.0),
-                )),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Form(
-                      key: _formKey,
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(2.0, 10.0, 2.0, 0.0),
-                        child: Column(
-                          children: [
-                            TextFormField(
-                              //autofocus: true,
-                              decoration: InputDecoration(
-                                  hintText: 'Email Address',
-                                  suffixIcon: Icon(
-                                    Icons.email_rounded,
-                                    color: Colors.yellow.shade900,
-                                  )),
-                              validator: (value) => _validateemail(value),
-                              onSaved: (value) => Signup().email = value,
-                            ),
-                            TextFormField(
-                              //autofocus: true,
-                              decoration: InputDecoration(
-                                  hintText: 'Username',
-                                  suffixIcon: Icon(
-                                    Icons.account_circle_sharp,
-                                    color: Colors.yellow.shade900,
-                                  )),
-                              validator: (value) => _validateemail(value),
-                              onSaved: (value) => Signup().email = value,
-                            ),
-                            TextFormField(
-                              //autofocus: true,
-                              obscureText: _obscureText,
-                              decoration: InputDecoration(
-                                  hintText: 'Password',
-                                  suffixIcon: Icon(
-                                    Icons.visibility_off,
-                                    color: Colors.yellow.shade900,
-                                  )),
-                              validator: (value) => _validatepassword(value),
-                              onSaved: (value) => Signup().password = value,
-                            ),
-                            TextFormField(
-                              //autofocus: true,
-                              obscureText: _obscureText,
-                              decoration: InputDecoration(
-                                  hintText: 'Confirm Password',
-                                  suffixIcon: Icon(
-                                    Icons.visibility_off,
-                                    color: Colors.yellow.shade900,
-                                  )),
-                              validator: (value) =>
-                                  _validateconfirmpassword(value),
-                              onSaved: (value) =>
-                                  Signup().confirmpassword = value,
-                            ),
-                            new FlatButton(
-                                //button is linked to toggle function
-                                onPressed: () => _toggle(),
-                                child: new Text(
-                                  _obscureText ? "Show" : "Hide",
-                                  style: TextStyle(color: Colors.blueGrey),
+                decoration: BoxDecoration(color: Colors.yellow.shade900),
+                padding: EdgeInsets.fromLTRB(0.0, 45.0, 0.0, 0.0),
+                child: ListView(
+                  children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height,
+                      width: MediaQuery.of(context).size.width,
+                      padding: EdgeInsets.fromLTRB(20.0, 150.0, 20.0, 0.0),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(0.0),
+                            topRight: Radius.circular(100.0),
+                          )),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Form(
+                                key: _formKey,
+                                child: Padding(
+                                  padding:
+                                      EdgeInsets.fromLTRB(2.0, 10.0, 2.0, 0.0),
+                                  child: Column(
+                                    children: [
+                                      TextFormField(
+                                        //autofocus: true,
+                                        decoration: InputDecoration(
+                                            hintText: 'Email Address',
+                                            suffixIcon: Icon(
+                                              Icons.email_rounded,
+                                              color: Colors.yellow.shade900,
+                                            )),
+                                        validator: (value) =>
+                                            _validateemail(value),
+                                        onSaved: (value) =>
+                                            Signup().email = value,
+                                      ),
+                                      TextFormField(
+                                        //autofocus: true,
+                                        decoration: InputDecoration(
+                                            hintText: 'Username',
+                                            suffixIcon: Icon(
+                                              Icons.account_circle_sharp,
+                                              color: Colors.yellow.shade900,
+                                            )),
+                                        validator: (value) =>
+                                            _validateusername(value),
+                                        onSaved: (value) =>
+                                            Signup().username = value,
+                                      ),
+                                      TextFormField(
+                                        //autofocus: true,
+                                        obscureText: _obscureText,
+                                        decoration: InputDecoration(
+                                            hintText: 'Password',
+                                            suffixIcon: Icon(
+                                              Icons.visibility_off,
+                                              color: Colors.yellow.shade900,
+                                            )),
+                                        validator: (value) =>
+                                            _validatepassword(value),
+                                        onSaved: (value) =>
+                                            Signup().password = value,
+                                      ),
+                                      TextFormField(
+                                        //autofocus: true,
+                                        obscureText: _obscureText,
+                                        decoration: InputDecoration(
+                                            hintText: 'Confirm Password',
+                                            suffixIcon: Icon(
+                                              Icons.visibility_off,
+                                              color: Colors.yellow.shade900,
+                                            )),
+                                        validator: (value) =>
+                                            _validateconfirmpassword(value),
+                                        onSaved: (value) =>
+                                            Signup().confirmpassword = value,
+                                      ),
+                                      new FlatButton(
+                                          //button is linked to toggle function
+                                          onPressed: () => _toggle(),
+                                          child: new Text(
+                                            _obscureText ? "Show" : "Hide",
+                                            style: TextStyle(
+                                                color: Colors.blueGrey),
+                                          )),
+                                      Padding(padding: EdgeInsets.all(0.0)),
+                                      FlatButton(
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(20.0)),
+                                          color: Colors.yellow.shade900,
+                                          onPressed: () => _submitOrder(),
+                                          padding: EdgeInsets.fromLTRB(
+                                              40.0, 10.0, 40.0, 10.0),
+                                          child: Text(
+                                            'SIGN UP',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontFamily: 'BalsamiqSans'),
+                                          ))
+                                    ],
+                                  ),
                                 )),
-                            Padding(padding: EdgeInsets.all(0.0)),
-                            FlatButton(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20.0)),
-                                color: Colors.yellow.shade900,
-                                onPressed: () => _submitOrder(),
-                                padding:
-                                    EdgeInsets.fromLTRB(40.0, 10.0, 40.0, 10.0),
-                                child: Text(
-                                  'SIGN UP',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'BalsamiqSans'),
-                                ))
-                          ],
-                        ),
-                      )),
-                )
-              ],
-            ),
-          ),
-        )));
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ))));
   }
 }
 

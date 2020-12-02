@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rstaurant_ui_app/pages/signup.dart';
+import 'package:rstaurant_ui_app/pages/login.dart';
 
 class SignUpWelcome extends StatefulWidget {
   @override
@@ -7,6 +8,14 @@ class SignUpWelcome extends StatefulWidget {
 }
 
 class _SignUpWelcomeState extends State<SignUpWelcome> {
+
+  void _loginpage({BuildContext context, bool fullScreenDialog = false}) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            fullscreenDialog: fullScreenDialog, builder: (context) => Login()));
+  }
+
   void _signup({BuildContext context, bool fullScreenDialog = false}) {
     Navigator.push(
       context,
@@ -17,7 +26,7 @@ class _SignUpWelcomeState extends State<SignUpWelcome> {
     );
   }
 
-  void _login() {}
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +48,10 @@ class _SignUpWelcomeState extends State<SignUpWelcome> {
               Padding(
                 padding: EdgeInsets.fromLTRB(15.0, 50.0, 10.0, 3.0),
                 child: FlatButton(
-                  onPressed: () {},
+                  onPressed: () => _loginpage(
+                    context: context,
+                    fullScreenDialog: true
+                  ),
                   child: Text(
                     'LOGIN',
                     style: TextStyle(
