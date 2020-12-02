@@ -68,7 +68,7 @@ class _SignUpState extends State<SignUp> {
                     Container(
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.fromLTRB(20.0, 150.0, 20.0, 0.0),
+                      padding: EdgeInsets.fromLTRB(20.0, 90.0, 20.0, 0.0),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
@@ -164,16 +164,94 @@ class _SignUpState extends State<SignUp> {
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'BalsamiqSans'),
-                                          ))
+                                          )
+                                      )
                                     ],
                                   ),
-                                )),
+                                )
+                            ),
+                          ),
+                          Padding(padding: EdgeInsets.all(20.0)),
+                    Text('Sign up with'),
+                    Padding(
+                      padding: EdgeInsets.all(32.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ButtonTheme(
+                                height: 50.0,
+                                minWidth:220.0,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0)
+                                  ),
+                                  onPressed: (){}, 
+                                  color: Colors.blue.shade600,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Image(image: AssetImage('assets/images/Facebook.png'), height: 30.0, width: 20.0,),
+                                      Padding(padding: EdgeInsets.all(10.0)),
+                                      Text(
+                                        "Facebook",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'BalsamiqSans'
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          Padding(padding: EdgeInsets.all(15.0)),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ButtonTheme(
+                                height: 50.0,
+                                minWidth:220.0,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0)
+                                  ),
+                                  onPressed: (){}, 
+                                  color: Colors.white,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Image(image: AssetImage('assets/images/google icon.png'), height: 30.0, width: 20.0,),
+                                      Padding(padding: EdgeInsets.all(10.0)),
+                                      Text(
+                                        "Gmail",
+                                        style: TextStyle(
+                                          color: Colors.red.shade500,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'BalsamiqSans'
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
                           )
                         ],
                       ),
                     ),
+                        ],
+                      ),
+                    ),
                   ],
-                ))));
+                )
+            )
+        )
+    );
   }
 }
 

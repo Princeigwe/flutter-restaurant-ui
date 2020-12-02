@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -35,6 +36,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.yellow.shade900,
           iconTheme: IconThemeData(color: Colors.white),
           title: Text(
@@ -112,13 +114,86 @@ class _LoginState extends State<Login> {
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: 'BalsamiqSans'),
-                                    ))
+                                    )
+                                )
                               ],
                             ),
-                          )),
+                          )
+                      ),
                     ),
+                    Padding(padding: EdgeInsets.all(20.0)),
                     Text('Login with'),
-                    Padding(padding: EdgeInsets.all(32.0)),
+                    Padding(
+                      padding: EdgeInsets.all(32.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ButtonTheme(
+                                height: 50.0,
+                                minWidth:220.0,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0)
+                                  ),
+                                  onPressed: (){}, 
+                                  color: Colors.blue.shade600,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Image(image: AssetImage('assets/images/Facebook.png'), height: 30.0, width: 20.0,),
+                                      Padding(padding: EdgeInsets.all(10.0)),
+                                      Text(
+                                        "Facebook",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'BalsamiqSans'
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          Padding(padding: EdgeInsets.all(15.0)),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ButtonTheme(
+                                height: 50.0,
+                                minWidth:220.0,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0)
+                                  ),
+                                  onPressed: (){}, 
+                                  color: Colors.white,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Image(image: AssetImage('assets/images/google icon.png'), height: 30.0, width: 20.0,),
+                                      Padding(padding: EdgeInsets.all(10.0)),
+                                      Text(
+                                        "Gmail",
+                                        style: TextStyle(
+                                          color: Colors.red.shade500,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'BalsamiqSans'
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
