@@ -58,8 +58,8 @@ class _LoginState extends State<Login> {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(0.0),
-                      topRight: Radius.circular(100.0),
+                      topLeft: Radius.circular(50.0),
+                      topRight: Radius.circular(50.0),
                     )),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,

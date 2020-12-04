@@ -24,6 +24,7 @@ class _HomeState extends State<Home> {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
+        
         image: DecorationImage(
           image: AssetImage('assets/images/Fbvert.jpg'),
           fit: BoxFit.cover,

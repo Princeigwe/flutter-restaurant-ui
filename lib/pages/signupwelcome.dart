@@ -34,10 +34,11 @@ class _SignUpWelcomeState extends State<SignUpWelcome> {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/images/beefstew.jpg'),
-          fit: BoxFit.cover,
-        ),
+        color: Colors.yellow.shade900
+       // image: DecorationImage(
+       //   image: AssetImage('assets/images/beefstew.jpg'),
+       //   fit: BoxFit.cover,
+       // ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -55,7 +56,7 @@ class _SignUpWelcomeState extends State<SignUpWelcome> {
                   child: Text(
                     'LOGIN',
                     style: TextStyle(
-                        color: Colors.grey.shade700,
+                        color: Colors.brown.shade900,
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'BalsamiqSans'),
@@ -100,7 +101,7 @@ class _SignUpWelcomeState extends State<SignUpWelcome> {
                           context: context, fullScreenDialog: true
                         ),
                         padding: EdgeInsets.fromLTRB(95.0, 20.0, 95.0, 20.0),
-                        color: Colors.yellow.shade900,
+                        color: Colors.brown.shade900,
                         child: Text(
                           'SIGN UP',
                           style: TextStyle(
@@ -119,7 +120,7 @@ class _SignUpWelcomeState extends State<SignUpWelcome> {
                       padding: EdgeInsets.fromLTRB(5.0, 20.0, 5.0, 10.0),
                       child: Text(
                         'By signing up, you agree to Terms of Use and Policy',
-                        style: TextStyle(color: Colors.grey.shade400),
+                        style: TextStyle(color: Colors.grey.shade200),
                       ),
                     )
                   ],
