@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rstaurant_ui_app/pages/solo.dart';
 import 'package:rstaurant_ui_app/pages/start_page.dart';
 import 'package:rstaurant_ui_app/pages/group.dart';
+import 'package:rstaurant_ui_app/pages/familypack.dart';
 
 class Start extends StatefulWidget {
   @override
@@ -92,6 +93,14 @@ class _StartState extends State<Start> {
             builder: (context) => Group(), fullscreenDialog: fullScreenDialog));
   }
 
+  void _family({BuildContext context, bool fullScreenDialog}) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => Family(),
+            fullscreenDialog: fullScreenDialog));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -134,11 +143,11 @@ class _StartState extends State<Start> {
                           if (index == 0) {
                             _soloheader(
                                 context: context, fullScreenDialog: true);
-                          }
-                          else if (index == 1) {
+                          } else if (index == 1) {
                             _groupof(context: context, fullScreenDialog: true);
+                          } else if (index == 2) {
+                            _family(context: context, fullScreenDialog: true);
                           }
-
                         },
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
