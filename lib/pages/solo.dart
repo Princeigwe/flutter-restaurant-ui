@@ -23,7 +23,10 @@ class _SoloState extends State<Solo> {
         ),
       ),
       body: CustomScrollView(
-        slivers: [],
+        slivers: [
+          SoloAppbarWidget(),
+          SoloListWidget()
+        ],
       ),
     );
   }
