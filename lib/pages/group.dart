@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:rstaurant_ui_app/widgets/soloappbar.dart';
-import 'package:rstaurant_ui_app/widgets/sololist.dart';
 
-class Solo extends StatefulWidget {
+class Group extends StatefulWidget {
   @override
-  _SoloState createState() => _SoloState();
+  _GroupState createState() => _GroupState();
 }
 
-class _SoloState extends State<Solo> {
+class _GroupState extends State<Group> {
   void _home({BuildContext context, bool fullScreenDialog}) {
     Navigator.pop(
       context,
-      MaterialPageRoute(builder: (context) => Solo(), fullscreenDialog: fullScreenDialog)
+      MaterialPageRoute(builder: (context) => Group(), fullscreenDialog: fullScreenDialog)
     );
   }
 
@@ -27,7 +25,7 @@ class _SoloState extends State<Solo> {
         backgroundColor: Colors.yellow.shade600,
         elevation: 0.0,
         title: Text(
-          'Solo',
+          'Group of 3',
           style: TextStyle(
               color: Colors.brown.shade900,
               fontSize: 25.0,
@@ -36,7 +34,9 @@ class _SoloState extends State<Solo> {
         ),
       ),
       body: CustomScrollView(
-        slivers: [SoloAppbarWidget(), SoloListWidget()],
+        slivers: [
+          //GroupAppbarWidget(), GroupListWidget()
+        ],
       ),
     );
   }

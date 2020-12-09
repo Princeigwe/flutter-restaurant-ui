@@ -73,12 +73,11 @@ class _SoloListWidgetState extends State<SoloListWidget> {
                             Text(
                               '${sololistitem['name']}',
                               style: TextStyle(
-                                color: Colors.brown.shade900,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20.0,
-                                fontFamily: 'BalsamiqSans',
-                                fontStyle: FontStyle.italic
-                              ),
+                                  color: Colors.brown.shade900,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                  fontFamily: 'BalsamiqSans',
+                                  fontStyle: FontStyle.italic),
                             ),
                           ],
                         ),
@@ -87,12 +86,11 @@ class _SoloListWidgetState extends State<SoloListWidget> {
                             Text(
                               '${sololistitem['reviews']} reviews',
                               style: TextStyle(
-                                color: Colors.yellow.shade700,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12.0,
-                                fontFamily: 'BalsamiqSans',
-                                fontStyle: FontStyle.italic
-                              ),
+                                  color: Colors.yellow.shade700,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 12.0,
+                                  fontFamily: 'BalsamiqSans',
+                                  fontStyle: FontStyle.italic),
                             ),
                           ],
                         ),
