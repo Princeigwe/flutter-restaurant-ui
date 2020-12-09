@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rstaurant_ui_app/pages/solo.dart';
+import 'package:rstaurant_ui_app/pages/start_page.dart';
 
 class Start extends StatefulWidget {
   @override
@@ -32,48 +34,56 @@ class _StartState extends State<Start> {
   var _mostpopular = [
     {
       'image': 'assets/images/seafoodefo.jpeg',
-      'text': 'Solo',
-      'reviews': 172
+      'text': 'Seafood Efo',
+      'reviews': 112
     },
     {
       'image': 'assets/images/shrimpandvegsauce.jpeg',
-      'text': 'Class of 3',
-      'reviews': 234
+      'text': 'Shrimp with Sauce',
+      'reviews': 204
     },
     {
       'image': 'assets/images/fufuandsoup.jpeg',
-      'text': 'Family Pack',
-      'reviews': 167
+      'text': 'Fufu with Egusi',
+      'reviews': 169
     },
     {
       'image': 'assets/images/sharwama.jpeg',
-      'text': 'Appetizers',
-      'reviews': 256
+      'text': 'Sharwama',
+      'reviews': 216
     },
   ];
 
   var _bestrated = [
     {
       'image': 'assets/images/ricewithmeat.jpeg',
-      'text': 'Solo',
+      'text': 'Jollof Rice',
       'reviews': 172
     },
     {
       'image': 'assets/images/peppersoup.jpeg',
-      'text': 'Class of 3',
+      'text': 'Pepper Soup',
       'reviews': 234
     },
     {
       'image': 'assets/images/fufuandsoup.jpeg',
-      'text': 'Family Pack',
+      'text': 'Fufu with Egusi',
       'reviews': 167
     },
     {
       'image': 'assets/images/sharwama.jpeg',
-      'text': 'Appetizers',
+      'text': 'Sharwama',
       'reviews': 256
     },
   ];
+
+  void _soloheader({BuildContext context, bool fullScreenDialog = false}){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Solo(), fullscreenDialog: fullScreenDialog)
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,7 +119,9 @@ class _StartState extends State<Start> {
                         // for giving smooth curves around card
                         clipBehavior: Clip.antiAlias,
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () => _soloheader(
+                            context: context, fullScreenDialog: true
+                          ),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -256,7 +268,7 @@ class _StartState extends State<Start> {
                   height: 230,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 4,
+                    itemCount: 3,
                     itemBuilder: (BuildContext context, index) {
                       var bestrated = _bestrated[index];
                       return Card(
@@ -275,8 +287,20 @@ class _StartState extends State<Start> {
                                   Image(image: AssetImage('${bestrated['image']}'),
                                   fit: BoxFit.fitWidth,
                                   height: 210,
-                                  
                                   ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(9.0,3.0,3.0,3.0),
+                                    child: Text(
+                                      '${bestrated['text']} ',
+                                      style: TextStyle(
+                                        color: Colors.yellow.shade600,
+                                        fontSize: 25.0,
+                                        fontStyle: FontStyle.italic,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'BalsamiqSans'
+                                      ),
+                                    ),
+                                  )
                                 ],
                               ),
                             ],
@@ -301,7 +325,7 @@ class _StartState extends State<Start> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-              icon: Icon(Icons.home_outlined),
+              icon: Icon(Icons.home_filled),
               onPressed: (){},
             ),
             IconButton(
