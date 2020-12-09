@@ -98,7 +98,7 @@ class _StartState extends State<Start> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.yellow.shade600,
-        elevation: 0.0,
+        elevation: 2.0,
         title: Text(
           'Kuusine',
           style: TextStyle(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rstaurant_ui_app/widgets/groupappbar.dart';
+import 'package:rstaurant_ui_app/widgets/grouplist.dart';
 
 class Group extends StatefulWidget {
   @override
@@ -35,7 +37,8 @@ class _GroupState extends State<Group> {
       ),
       body: CustomScrollView(
         slivers: [
-          //GroupAppbarWidget(), GroupListWidget()
+          GroupAppbarWidget(), 
+          GroupListWidget()
         ],
       ),
     );
