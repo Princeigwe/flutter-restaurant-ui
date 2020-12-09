@@ -45,17 +45,17 @@ class _LoginState extends State<Login> {
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.yellow.shade900,
+          backgroundColor: Colors.yellow.shade600,
           iconTheme: IconThemeData(color: Colors.white),
           title: Text(
             'Kuusine',
-            style: TextStyle(color: Colors.white, fontFamily: 'BalsamiqSans'),
+            style: TextStyle(color: Colors.brown.shade900, fontFamily: 'BalsamiqSans'),
           ),
           elevation: 0.0,
         ),
         body: SafeArea(
             child: Container(
-          decoration: BoxDecoration(color: Colors.yellow.shade900),
+          decoration: BoxDecoration(color: Colors.yellow.shade600),
           padding: EdgeInsets.fromLTRB(0.0, 45.0, 0.0, 0.0),
           child: ListView(
             children: [
@@ -112,14 +112,14 @@ class _LoginState extends State<Login> {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(20.0)),
-                                    color: Colors.yellow.shade900,
+                                    color: Colors.yellow.shade600,
                                     onPressed: () => _submitOrder(),
                                     padding: EdgeInsets.fromLTRB(
                                         40.0, 10.0, 40.0, 10.0),
                                     child: Text(
                                       'LOG IN',
                                       style: TextStyle(
-                                          color: Colors.white,
+                                          color: Colors.brown.shade900,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: 'BalsamiqSans'),
                                     ))

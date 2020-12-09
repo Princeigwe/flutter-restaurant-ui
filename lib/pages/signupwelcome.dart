@@ -34,7 +34,7 @@ class _SignUpWelcomeState extends State<SignUpWelcome> {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-        color: Colors.yellow.shade900
+        color: Colors.yellow.shade600
        // image: DecorationImage(
        //   image: AssetImage('assets/images/beefstew.jpg'),
        //   fit: BoxFit.cover,
@@ -76,7 +76,7 @@ class _SignUpWelcomeState extends State<SignUpWelcome> {
                     'Eat what you love...',
                     textAlign: TextAlign.start,
                     style: TextStyle(
-                        color: Colors.grey.shade200,
+                        color: Colors.grey.shade700,
                         fontSize: 30.0,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'BalsamiqSans'),
@@ -120,7 +120,7 @@ class _SignUpWelcomeState extends State<SignUpWelcome> {
                       padding: EdgeInsets.fromLTRB(5.0, 20.0, 5.0, 10.0),
                       child: Text(
                         'By signing up, you agree to Terms of Use and Policy',
-                        style: TextStyle(color: Colors.grey.shade200),
+                        style: TextStyle(color: Colors.grey.shade700),
                       ),
                     )
                   ],

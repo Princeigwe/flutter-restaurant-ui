@@ -51,17 +51,17 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.yellow.shade900,
-          iconTheme: IconThemeData(color: Colors.white),
+          backgroundColor: Colors.yellow.shade600,
+          iconTheme: IconThemeData(color: Colors.brown.shade900),
           title: Text(
             'Kuusine',
-            style: TextStyle(color: Colors.white, fontFamily: 'BalsamiqSans'),
+            style: TextStyle(color: Colors.brown.shade900, fontFamily: 'BalsamiqSans'),
           ),
           elevation: 0.0,
         ),
         body: SafeArea(
             child: Container(
-                decoration: BoxDecoration(color: Colors.yellow.shade900),
+                decoration: BoxDecoration(color: Colors.yellow.shade600),
                 padding: EdgeInsets.fromLTRB(0.0, 45.0, 0.0, 0.0),
                 child: ListView(
                   children: [
@@ -154,14 +154,14 @@ class _SignUpState extends State<SignUp> {
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(20.0)),
-                                          color: Colors.yellow.shade900,
+                                          color: Colors.yellow.shade600,
                                           onPressed: () => _submitOrder(),
                                           padding: EdgeInsets.fromLTRB(
                                               40.0, 10.0, 40.0, 10.0),
                                           child: Text(
                                             'SIGN UP',
                                             style: TextStyle(
-                                                color: Colors.white,
+                                                color: Colors.brown.shade900,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'BalsamiqSans'),
                                           )

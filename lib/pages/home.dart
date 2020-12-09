@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
                   child: Text(
                     "Kuusine",
                     style: TextStyle(
-                        color: Colors.yellow.shade900,
+                        color: Colors.yellow.shade600,
                         fontSize: 45.0,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'BalsamiqSans'),
@@ -71,12 +71,12 @@ class _HomeState extends State<Home> {
                         child: Text(
                           'Get Started',
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.brown.shade900,
                               fontSize: 15.0,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      color: Colors.yellow.shade900,
+                      color: Colors.yellow.shade600,
                     )
                   ],
                 ),

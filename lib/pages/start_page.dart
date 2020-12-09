@@ -8,7 +8,53 @@ class Start extends StatefulWidget {
 class _StartState extends State<Start> {
   var _foodheaders = [
     {
-      'image': 'assets/images/foodbackground.jpeg',
+      'image': 'assets/images/ricewithmeat.jpeg',
+      'text': 'Solo',
+      'reviews': 172
+    },
+    {
+      'image': 'assets/images/peppersoup.jpeg',
+      'text': 'Class of 3',
+      'reviews': 234
+    },
+    {
+      'image': 'assets/images/fufuandsoup.jpeg',
+      'text': 'Family Pack',
+      'reviews': 167
+    },
+    {
+      'image': 'assets/images/sharwama.jpeg',
+      'text': 'Appetizers',
+      'reviews': 256
+    },
+  ];
+
+  var _mostpopular = [
+    {
+      'image': 'assets/images/seafoodefo.jpeg',
+      'text': 'Solo',
+      'reviews': 172
+    },
+    {
+      'image': 'assets/images/shrimpandvegsauce.jpeg',
+      'text': 'Class of 3',
+      'reviews': 234
+    },
+    {
+      'image': 'assets/images/fufuandsoup.jpeg',
+      'text': 'Family Pack',
+      'reviews': 167
+    },
+    {
+      'image': 'assets/images/sharwama.jpeg',
+      'text': 'Appetizers',
+      'reviews': 256
+    },
+  ];
+
+  var _bestrated = [
+    {
+      'image': 'assets/images/ricewithmeat.jpeg',
       'text': 'Solo',
       'reviews': 172
     },
@@ -33,7 +79,7 @@ class _StartState extends State<Start> {
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.yellow.shade900,
+          backgroundColor: Colors.yellow.shade600,
           elevation: 0.0,
           title: Text(
             'Kuusine',
@@ -116,7 +162,7 @@ class _StartState extends State<Start> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(padding: EdgeInsets.fromLTRB(30.0,20.0,1.0,9.0),
+                    Padding(padding: EdgeInsets.fromLTRB(30.0,30.0,1.0,9.0),
                     child: Text(
                       'Most Popular',
                       style: TextStyle(
@@ -135,7 +181,7 @@ class _StartState extends State<Start> {
                     scrollDirection: Axis.horizontal,
                     itemCount: 4,
                     itemBuilder: (BuildContext context, index) {
-                      var foodheaders = _foodheaders[index];
+                      var mostpopular = _mostpopular[index];
                       return Card(
                         // for giving smooth curves around card
                         clipBehavior: Clip.antiAlias,
@@ -148,7 +194,7 @@ class _StartState extends State<Start> {
                               Stack(
                                 alignment: Alignment.bottomLeft,
                                 children: [
-                                  Image(image: AssetImage('${foodheaders['image']}'),
+                                  Image(image: AssetImage('${mostpopular['image']}'),
                                   fit: BoxFit.fitWidth,
                                   height: 150,
                                   ),
@@ -161,7 +207,7 @@ class _StartState extends State<Start> {
                                       mainAxisSize: MainAxisSize.min,
                                       children:[
                                         Text(
-                                        '${foodheaders['text']}',
+                                        '${mostpopular['text']}',
                                         style: TextStyle(
                                           color: Colors.brown.shade900,
                                           fontSize: 20.0,
@@ -170,7 +216,7 @@ class _StartState extends State<Start> {
                                         ),
                                       ),
                                       Text(
-                                        ' ${foodheaders['reviews']} reviews',
+                                        ' ${mostpopular['reviews']} reviews',
                                         style: TextStyle(
                                           fontStyle: FontStyle.italic
                                         ),
@@ -193,7 +239,7 @@ class _StartState extends State<Start> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(padding: EdgeInsets.fromLTRB(30.0,20.0,1.0,9.0),
+                    Padding(padding: EdgeInsets.fromLTRB(30.0,30.0,1.0,9.0),
                     child: Text(
                       'Best Rated',
                       style: TextStyle(
@@ -212,7 +258,7 @@ class _StartState extends State<Start> {
                     scrollDirection: Axis.horizontal,
                     itemCount: 4,
                     itemBuilder: (BuildContext context, index) {
-                      var foodheaders = _foodheaders[index];
+                      var bestrated = _bestrated[index];
                       return Card(
                         
                         // for giving smooth curves around card
@@ -226,7 +272,7 @@ class _StartState extends State<Start> {
                               Stack(
                                 alignment: Alignment.bottomLeft,
                                 children: [
-                                  Image(image: AssetImage('${foodheaders['image']}'),
+                                  Image(image: AssetImage('${bestrated['image']}'),
                                   fit: BoxFit.fitWidth,
                                   height: 210,
                                   
@@ -248,6 +294,40 @@ class _StartState extends State<Start> {
               ],
             ),
           ),
-        ));
+        ),
+        
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              icon: Icon(Icons.home_outlined),
+              onPressed: (){},
+            ),
+            IconButton(
+              icon: Icon(Icons.location_on_outlined),
+              onPressed: (){},
+            ),
+            Divider(),
+            IconButton(
+              icon: Icon(Icons.favorite_border_outlined),
+              onPressed: (){},
+            ),
+            IconButton(
+              icon: Icon(Icons.account_box_outlined),
+              onPressed: (){},
+            ),
+          
+          ],
+        ),
+        color: Colors.yellow.shade600,
+        shape: CircularNotchedRectangle(),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.search_outlined),
+      ),
+    );
   }
 }
