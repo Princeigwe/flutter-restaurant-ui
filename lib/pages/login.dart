@@ -1,5 +1,12 @@
-
 import 'package:flutter/material.dart';
+import 'package:rstaurant_ui_app/pages/start_page.dart';
+
+void _startpage({BuildContext context, bool fullScreenDialog = false}) {
+  Navigator.push(
+      context,
+      MaterialPageRoute(
+          fullscreenDialog: fullScreenDialog, builder: (context) => Start()));
+}
 
 class Login extends StatefulWidget {
   @override
@@ -20,6 +27,7 @@ class _LoginState extends State<Login> {
   void _submitOrder() {
     if (_formkey.currentState.validate()) {
       _formkey.currentState.save();
+      _startpage(context: context, fullScreenDialog: true);
       // _loginpage(context: context, fullScreenDialog: true);
     }
   }
@@ -114,12 +122,10 @@ class _LoginState extends State<Login> {
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: 'BalsamiqSans'),
-                                    )
-                                )
+                                    ))
                               ],
                             ),
-                          )
-                      ),
+                          )),
                     ),
                     Padding(padding: EdgeInsets.all(20.0)),
                     Text('Login with'),
@@ -133,25 +139,30 @@ class _LoginState extends State<Login> {
                             children: [
                               ButtonTheme(
                                 height: 50.0,
-                                minWidth:220.0,
+                                minWidth: 220.0,
                                 child: RaisedButton(
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0)
-                                  ),
-                                  onPressed: (){}, 
+                                      borderRadius:
+                                          BorderRadius.circular(10.0)),
+                                  onPressed: () {},
                                   color: Colors.blue.shade600,
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Image(image: AssetImage('assets/images/Facebook.png'), height: 30.0, width: 20.0,),
+                                      Image(
+                                        image: AssetImage(
+                                            'assets/images/Facebook.png'),
+                                        height: 30.0,
+                                        width: 20.0,
+                                      ),
                                       Padding(padding: EdgeInsets.all(10.0)),
                                       Text(
                                         "Facebook",
                                         style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'BalsamiqSans'
-                                        ),
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'BalsamiqSans'),
                                       )
                                     ],
                                   ),
@@ -165,25 +176,30 @@ class _LoginState extends State<Login> {
                             children: [
                               ButtonTheme(
                                 height: 50.0,
-                                minWidth:220.0,
+                                minWidth: 220.0,
                                 child: RaisedButton(
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0)
-                                  ),
-                                  onPressed: (){}, 
+                                      borderRadius:
+                                          BorderRadius.circular(10.0)),
+                                  onPressed: () {},
                                   color: Colors.white,
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Image(image: AssetImage('assets/images/google icon.png'), height: 30.0, width: 20.0,),
+                                      Image(
+                                        image: AssetImage(
+                                            'assets/images/google icon.png'),
+                                        height: 30.0,
+                                        width: 20.0,
+                                      ),
                                       Padding(padding: EdgeInsets.all(10.0)),
                                       Text(
                                         "Gmail",
                                         style: TextStyle(
-                                          color: Colors.red.shade500,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'BalsamiqSans'
-                                        ),
+                                            color: Colors.red.shade500,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'BalsamiqSans'),
                                       )
                                     ],
                                   ),
