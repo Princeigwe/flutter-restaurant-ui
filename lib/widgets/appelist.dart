@@ -1,50 +1,73 @@
 import 'package:flutter/material.dart';
 
-class SoloListWidget extends StatefulWidget {
+class AppetizerListWidget extends StatefulWidget {
   @override
-  _SoloListWidgetState createState() => _SoloListWidgetState();
+  _AppetizerListWidgetState createState() => _AppetizerListWidgetState();
 }
 
-class _SoloListWidgetState extends State<SoloListWidget> {
-  var _sololistitem = [
+class _AppetizerListWidgetState extends State<AppetizerListWidget> {
+
+  var _appetizerlistitem = [
     {
-      'image': 'assets/images/beefstew.jpeg',
-      'name': 'beefstew',
-      'reviews': '102',
-      'ratings': '3.2'
+      'image': 'assets/images/burger.jpeg',
+      'name': 'hamburger',
+      'reviews': '110',
+      'ratings': '4.0'
     },
     {
-      'image': 'assets/images/okpa.jpeg',
-      'name': 'okpa',
-      'reviews': '124',
-      'ratings': '4.2'
-    },
-    {
-      'image': 'assets/images/eforiro.jpeg',
-      'name': 'eforiro',
-      'reviews': '102',
+      'image': 'assets/images/sharwama.jpeg',
+      'name': 'sharwama',
+      'reviews': '104',
       'ratings': '3.9'
     },
     {
-      'image': 'assets/images/ricewithmeat.jpeg',
-      'name': 'jollof rice',
-      'reviews': '102',
-      'ratings': '3.2'
+      'image': 'assets/images/lambrackwithpotatoes.jpeg',
+      'name': 'lamb rack',
+      'reviews': '92',
+      'ratings': '3.5'
     },
     {
-      'image': 'assets/images/ofensala.jpeg',
-      'name': 'ofensala',
-      'reviews': '239',
-      'ratings': '4.8'
+      'image': 'assets/images/susagerolls.jpeg',
+      'name': 'susage rolls',
+      'reviews': '95',
+      'ratings': '3.0'
     },
-    
+    {
+      'image': 'assets/images/pizza.jpeg',
+      'name': 'pizza',
+      'reviews': '195',
+      'ratings': '4.5'
+    },
+    {
+      'image': 'assets/images/icecreamsundae.jpeg',
+      'name': 'sundae',
+      'reviews': '108',
+      'ratings': '4.0'
+    },
+    {
+      'image': 'assets/images/chickenpie.jpeg',
+      'name': 'chicken pie',
+      'reviews': '95',
+      'ratings': '5.0'
+    },
+    {
+      'image': 'assets/images/coconutcandy.jpeg',
+      'name': 'coconut candy',
+      'reviews': '55',
+      'ratings': '3.7'
+    },
+    {
+      'image': 'assets/images/cupcake.jpeg',
+      'name': 'cupcake',
+      'reviews': '43',
+      'ratings': '3.4'
+    },
   ];
-
   @override
   Widget build(BuildContext context) {
     return SliverList(
-      delegate: SliverChildListDelegate(List.generate(5, (int index) {
-        var sololistitem = _sololistitem[index];
+      delegate: SliverChildListDelegate(List.generate(9, (int index) {
+        var appetizerlistitem = _appetizerlistitem[index];
         return Card(
           color: Colors.grey.shade100,
           elevation: 3.0,
@@ -64,7 +87,7 @@ class _SoloListWidgetState extends State<SoloListWidget> {
                     height: 350.0,
                     padding: EdgeInsets.all(16.0),
                     child: Image(
-                      image: AssetImage('${sololistitem['image']}'),
+                      image: AssetImage('${appetizerlistitem['image']}'),
                       width: 150.0,
                       fit: BoxFit.fitHeight,
                       //height: 150.0,
@@ -78,7 +101,7 @@ class _SoloListWidgetState extends State<SoloListWidget> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              '${sololistitem['name']}',
+                              '${appetizerlistitem['name']}',
                               style: TextStyle(
                                   color: Colors.brown.shade900,
                                   fontWeight: FontWeight.bold,
@@ -91,7 +114,7 @@ class _SoloListWidgetState extends State<SoloListWidget> {
                         Row(
                           children: [
                             Text(
-                              '${sololistitem['reviews']} reviews',
+                              '${appetizerlistitem['reviews']} reviews',
                               style: TextStyle(
                                   color: Colors.yellow.shade700,
                                   fontWeight: FontWeight.bold,
@@ -104,7 +127,7 @@ class _SoloListWidgetState extends State<SoloListWidget> {
                         Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Text('${sololistitem['ratings']}'),
+                            Text('${appetizerlistitem['ratings']}'),
                             Icon(
                               Icons.star_border_outlined,
                               color: Colors.yellow.shade600,

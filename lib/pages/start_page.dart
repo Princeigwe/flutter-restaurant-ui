@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rstaurant_ui_app/pages/solo.dart';
-import 'package:rstaurant_ui_app/pages/start_page.dart';
 import 'package:rstaurant_ui_app/pages/group.dart';
 import 'package:rstaurant_ui_app/pages/familypack.dart';
+import 'package:rstaurant_ui_app/pages/appetizer.dart';
 
 class Start extends StatefulWidget {
   @override
@@ -101,6 +101,14 @@ class _StartState extends State<Start> {
             fullscreenDialog: fullScreenDialog));
   }
 
+  void _appetizer({BuildContext context, bool fullScreenDialog = false}) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => Appetizer(),
+            fullscreenDialog: fullScreenDialog));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -147,6 +155,9 @@ class _StartState extends State<Start> {
                             _groupof(context: context, fullScreenDialog: true);
                           } else if (index == 2) {
                             _family(context: context, fullScreenDialog: true);
+                          } else {
+                            _appetizer(
+                                context: context, fullScreenDialog: true);
                           }
                         },
                         child: Column(
@@ -365,7 +376,7 @@ class _StartState extends State<Start> {
             ),
           ],
         ),
-        color: Colors.yellow.shade600,
+        color: Colors.white,
         shape: CircularNotchedRectangle(),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
