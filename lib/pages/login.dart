@@ -49,7 +49,8 @@ class _LoginState extends State<Login> {
           iconTheme: IconThemeData(color: Colors.white),
           title: Text(
             'Kuusine',
-            style: TextStyle(color: Colors.brown.shade900, fontFamily: 'BalsamiqSans'),
+            style: TextStyle(
+                color: Colors.brown.shade900, fontFamily: 'BalsamiqSans'),
           ),
           elevation: 0.0,
         ),

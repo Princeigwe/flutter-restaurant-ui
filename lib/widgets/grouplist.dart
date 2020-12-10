@@ -21,6 +21,12 @@ class _GroupListWidgetState extends State<GroupListWidget> {
       'ratings': '4.2'
     },
     {
+      'image': 'assets/images/boleandfish.jpeg',
+      'name': 'bole',
+      'reviews': '292',
+      'ratings': '4.8'
+    },
+    {
       'image': 'assets/images/seafoodefo.jpeg',
       'name': 'sea food efo',
       'reviews': '92',
@@ -37,7 +43,7 @@ class _GroupListWidgetState extends State<GroupListWidget> {
   @override
   Widget build(BuildContext context) {
     return SliverList(
-      delegate: SliverChildListDelegate(List.generate(4, (int index) {
+      delegate: SliverChildListDelegate(List.generate(5, (int index) {
         var grouplistitem = _grouplistitem[index];
         return Card(
           color: Colors.grey.shade100,
