@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rstaurant_ui_app/widgets/fpappbar.dart';
+import 'package:rstaurant_ui_app/widgets/fplist.dart';
 
 class Family extends StatefulWidget {
   @override
@@ -35,8 +37,8 @@ class _FamilyState extends State<Family> {
       ),
       body: CustomScrollView(
         slivers: [
-          //GroupAppbarWidget(), 
-          //GroupListWidget()
+          FamilyAppbarWidget(), 
+          FamilyListWidget()
         ],
       ),
     );
