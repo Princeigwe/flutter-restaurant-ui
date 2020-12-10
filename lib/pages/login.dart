@@ -86,7 +86,7 @@ class _LoginState extends State<Login> {
                                       hintText: 'Username',
                                       suffixIcon: Icon(
                                         Icons.account_circle_sharp,
-                                        color: Colors.yellow.shade900,
+                                        color: Colors.yellow.shade600,
                                       )),
                                   validator: (value) =>
                                       _validateusername(value),
@@ -100,7 +100,7 @@ class _LoginState extends State<Login> {
                                       hintText: 'Password',
                                       suffixIcon: Icon(
                                         Icons.visibility_off,
-                                        color: Colors.yellow.shade900,
+                                        color: Colors.yellow.shade600,
                                       )),
                                   validator: (value) =>
                                       _validatepassword(value),
