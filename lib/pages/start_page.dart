@@ -3,6 +3,7 @@ import 'package:rstaurant_ui_app/pages/solo.dart';
 import 'package:rstaurant_ui_app/pages/group.dart';
 import 'package:rstaurant_ui_app/pages/familypack.dart';
 import 'package:rstaurant_ui_app/pages/appetizer.dart';
+import 'package:rstaurant_ui_app/pages/seafoodefo.dart';
 
 class Start extends StatefulWidget {
   @override
@@ -36,7 +37,7 @@ class _StartState extends State<Start> {
   var _mostpopular = [
     {
       'image': 'assets/images/seafoodefo.jpeg',
-      'text': 'Seafood Efo',
+      'text': 'Seafood Efo Riro',
       'reviews': 112
     },
     {
@@ -106,6 +107,14 @@ class _StartState extends State<Start> {
         context,
         MaterialPageRoute(
             builder: (context) => Appetizer(),
+            fullscreenDialog: fullScreenDialog));
+  }
+
+  void _seafoodefopage({BuildContext context, bool fullScreenDialog = false}) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => Seafoodefo(),
             fullscreenDialog: fullScreenDialog));
   }
 
@@ -234,7 +243,12 @@ class _StartState extends State<Start> {
                       // for giving smooth curves around card
                       clipBehavior: Clip.antiAlias,
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          if (index == 0) {
+                            _seafoodefopage(
+                                context: context, fullScreenDialog: true);
+                          }
+                        },
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,

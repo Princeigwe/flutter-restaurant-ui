@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:rstaurant_ui_app/pages/bole.dart';
 
 class GroupListWidget extends StatefulWidget {
   @override
@@ -6,7 +8,6 @@ class GroupListWidget extends StatefulWidget {
 }
 
 class _GroupListWidgetState extends State<GroupListWidget> {
-
   var _grouplistitem = [
     {
       'image': 'assets/images/ovenroastedfish.jpeg',
@@ -28,7 +29,7 @@ class _GroupListWidgetState extends State<GroupListWidget> {
     },
     {
       'image': 'assets/images/seafoodefo.jpeg',
-      'name': 'sea food efo',
+      'name': 'sea food eforiro',
       'reviews': '92',
       'ratings': '3.5'
     },
@@ -39,6 +40,12 @@ class _GroupListWidgetState extends State<GroupListWidget> {
       'ratings': '3.5'
     },
   ];
+  void _bolepage({BuildContext context, bool fullScreenDialog}) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => Bole(), fullscreenDialog: fullScreenDialog));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +62,11 @@ class _GroupListWidgetState extends State<GroupListWidget> {
           child: Container(
             height: 200.0,
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                if (index == 2) {
+                  _bolepage(context: context, fullScreenDialog: true);
+                }
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
