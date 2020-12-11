@@ -1,9 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:rstaurant_ui_app/pages/solo.dart';
 import 'package:rstaurant_ui_app/pages/group.dart';
 import 'package:rstaurant_ui_app/pages/familypack.dart';
 import 'package:rstaurant_ui_app/pages/appetizer.dart';
 import 'package:rstaurant_ui_app/pages/seafoodefo.dart';
+import 'package:rstaurant_ui_app/pages/profile.dart';
 
 class Start extends StatefulWidget {
   @override
@@ -11,6 +13,13 @@ class Start extends StatefulWidget {
 }
 
 class _StartState extends State<Start> {
+  void _profile({BuildContext context, bool fullScreenDialog = false}) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context)=>Profile(), fullscreenDialog: fullScreenDialog)
+    );
+  }
+
   var _foodheaders = [
     {
       'image': 'assets/images/ricewithmeat.jpeg',
@@ -385,8 +394,8 @@ class _StartState extends State<Start> {
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.account_box_outlined),
-              onPressed: () {},
+              icon: Icon(Icons.account_circle_outlined),
+              onPressed: () => _profile(context: context, fullScreenDialog: true),
             ),
           ],
         ),
