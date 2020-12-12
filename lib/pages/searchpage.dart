@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rstaurant_ui_app/pages/profile.dart';
+import 'package:rstaurant_ui_app/pages/start_page.dart';
 
 class SearchPage extends StatefulWidget {
   @override
@@ -15,6 +16,13 @@ class _SearchPageState extends State<SearchPage> {
             builder: (context) => Profile(),
             fullscreenDialog: fullScreenDialog));
   }
+
+  void _home({BuildContext context, bool fullScreenDialog}) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context)=>Start(), fullscreenDialog: fullScreenDialog)
+  );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +88,7 @@ class _SearchPageState extends State<SearchPage> {
           children: [
             IconButton(
               icon: Icon(Icons.home_outlined),
-              onPressed: () {},
+              onPressed: ()=>_home(context: context, fullScreenDialog: true),
             ),
             IconButton(
               icon: Icon(Icons.location_on_outlined),

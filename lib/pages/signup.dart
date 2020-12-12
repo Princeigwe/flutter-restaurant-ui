@@ -55,7 +55,8 @@ class _SignUpState extends State<SignUp> {
           iconTheme: IconThemeData(color: Colors.brown.shade900),
           title: Text(
             'Kuusine',
-            style: TextStyle(color: Colors.brown.shade900, fontFamily: 'BalsamiqSans'),
+            style: TextStyle(
+                color: Colors.brown.shade900, fontFamily: 'BalsamiqSans'),
           ),
           elevation: 0.0,
         ),
@@ -164,94 +165,101 @@ class _SignUpState extends State<SignUp> {
                                                 color: Colors.brown.shade900,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'BalsamiqSans'),
-                                          )
-                                      )
+                                          ))
                                     ],
                                   ),
-                                )
-                            ),
+                                )),
                           ),
                           Padding(padding: EdgeInsets.all(20.0)),
-                    Text('Sign up with'),
-                    Padding(
-                      padding: EdgeInsets.all(32.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              ButtonTheme(
-                                height: 50.0,
-                                minWidth:220.0,
-                                child: RaisedButton(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0)
-                                  ),
-                                  onPressed: (){}, 
-                                  color: Colors.blue.shade600,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Image(image: AssetImage('assets/images/Facebook.png'), height: 30.0, width: 20.0,),
-                                      Padding(padding: EdgeInsets.all(10.0)),
-                                      Text(
-                                        "Facebook",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'BalsamiqSans'
+                          Text('Sign up with'),
+                          Padding(
+                            padding: EdgeInsets.all(32.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    ButtonTheme(
+                                      height: 50.0,
+                                      minWidth: 220.0,
+                                      child: RaisedButton(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10.0)),
+                                        onPressed: () {},
+                                        color: Colors.blue.shade600,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Image(
+                                              image: AssetImage(
+                                                  'assets/images/Facebook.png'),
+                                              height: 30.0,
+                                              width: 20.0,
+                                            ),
+                                            Padding(
+                                                padding: EdgeInsets.all(10.0)),
+                                            Text(
+                                              "Facebook",
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: 'BalsamiqSans'),
+                                            )
+                                          ],
                                         ),
-                                      )
-                                    ],
-                                  ),
+                                      ),
+                                    )
+                                  ],
                                 ),
-                              )
-                            ],
+                                Padding(padding: EdgeInsets.all(15.0)),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    ButtonTheme(
+                                      height: 50.0,
+                                      minWidth: 220.0,
+                                      child: RaisedButton(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10.0)),
+                                        onPressed: () {},
+                                        color: Colors.white,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Image(
+                                              image: AssetImage(
+                                                  'assets/images/google icon.png'),
+                                              height: 30.0,
+                                              width: 20.0,
+                                            ),
+                                            Padding(
+                                                padding: EdgeInsets.all(10.0)),
+                                            Text(
+                                              "Gmail",
+                                              style: TextStyle(
+                                                  color: Colors.red.shade500,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: 'BalsamiqSans'),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
-                          Padding(padding: EdgeInsets.all(15.0)),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              ButtonTheme(
-                                height: 50.0,
-                                minWidth:220.0,
-                                child: RaisedButton(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0)
-                                  ),
-                                  onPressed: (){}, 
-                                  color: Colors.white,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Image(image: AssetImage('assets/images/google icon.png'), height: 30.0, width: 20.0,),
-                                      Padding(padding: EdgeInsets.all(10.0)),
-                                      Text(
-                                        "Gmail",
-                                        style: TextStyle(
-                                          color: Colors.red.shade500,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'BalsamiqSans'
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
                         ],
                       ),
                     ),
                   ],
-                )
-            )
-        )
-    );
+                ))));
   }
 }
 

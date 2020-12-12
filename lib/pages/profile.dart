@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rstaurant_ui_app/pages/searchpage.dart';
+import 'package:rstaurant_ui_app/pages/start_page.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -6,11 +8,19 @@ class Profile extends StatefulWidget {
 }
 
 void _home({BuildContext context, bool fullScreenDialog}) {
-    Navigator.pop(
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context)=>Start(), fullscreenDialog: fullScreenDialog)
+  );
+}
+
+void _searchpage({BuildContext context, bool fullScreenDialog}) {
+  Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Profile(), fullscreenDialog: fullScreenDialog)
-    );
-  }
+      MaterialPageRoute(
+          builder: (context) => SearchPage(),
+          fullscreenDialog: fullScreenDialog));
+}
 
 class _ProfileState extends State<Profile> {
   @override
@@ -18,10 +28,6 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: ()=>_home(context: context, fullScreenDialog: true),
-        ),
         backgroundColor: Colors.yellow.shade600,
         elevation: 2.0,
         title: Text(
@@ -51,23 +57,27 @@ class _ProfileState extends State<Profile> {
                   Text(
                     'Prince',
                     style: TextStyle(
-                      color: Colors.brown.shade900,
-                      fontSize: 25.0,
-                      fontFamily: 'BalsamiqSans',
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic),
+                        color: Colors.brown.shade900,
+                        fontSize: 25.0,
+                        fontFamily: 'BalsamiqSans',
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic),
                   )
                 ],
               ),
               ListTile(
-                leading: Icon(Icons.account_box_outlined, size: 30.0, color: Colors.black,),
+                leading: Icon(
+                  Icons.account_box_outlined,
+                  size: 30.0,
+                  color: Colors.black,
+                ),
                 title: Text(
                   'Name',
                   style: TextStyle(
-                    color: Colors.brown.shade900,
-                    fontSize: 15.0,
-                    fontFamily: 'BalsamiqSans',
-                    fontWeight: FontWeight.bold),
+                      color: Colors.brown.shade900,
+                      fontSize: 15.0,
+                      fontFamily: 'BalsamiqSans',
+                      fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(
                   'Prince Igwe',
@@ -75,14 +85,18 @@ class _ProfileState extends State<Profile> {
                 trailing: Icon(Icons.more_vert),
               ),
               ListTile(
-                leading: Icon(Icons.phone_android_outlined, size: 30.0, color: Colors.black,),
+                leading: Icon(
+                  Icons.phone_android_outlined,
+                  size: 30.0,
+                  color: Colors.black,
+                ),
                 title: Text(
                   'Mobile',
                   style: TextStyle(
-                    color: Colors.brown.shade900,
-                    fontSize: 15.0,
-                    fontFamily: 'BalsamiqSans',
-                    fontWeight: FontWeight.bold),
+                      color: Colors.brown.shade900,
+                      fontSize: 15.0,
+                      fontFamily: 'BalsamiqSans',
+                      fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(
                   '+2349058114264',
@@ -90,14 +104,18 @@ class _ProfileState extends State<Profile> {
                 trailing: Icon(Icons.more_vert),
               ),
               ListTile(
-                leading: Icon(Icons.email_outlined, size: 30.0, color: Colors.black,),
+                leading: Icon(
+                  Icons.email_outlined,
+                  size: 30.0,
+                  color: Colors.black,
+                ),
                 title: Text(
                   'Email',
                   style: TextStyle(
-                    color: Colors.brown.shade900,
-                    fontSize: 15.0,
-                    fontFamily: 'BalsamiqSans',
-                    fontWeight: FontWeight.bold),
+                      color: Colors.brown.shade900,
+                      fontSize: 15.0,
+                      fontFamily: 'BalsamiqSans',
+                      fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(
                   'Igwep297@gmail.com',
@@ -105,14 +123,18 @@ class _ProfileState extends State<Profile> {
                 trailing: Icon(Icons.more_vert),
               ),
               ListTile(
-                leading: Icon(Icons.location_on_outlined, size: 30.0, color: Colors.black,),
+                leading: Icon(
+                  Icons.location_on_outlined,
+                  size: 30.0,
+                  color: Colors.black,
+                ),
                 title: Text(
                   'Address',
                   style: TextStyle(
-                    color: Colors.brown.shade900,
-                    fontSize: 15.0,
-                    fontFamily: 'BalsamiqSans',
-                    fontWeight: FontWeight.bold),
+                      color: Colors.brown.shade900,
+                      fontSize: 15.0,
+                      fontFamily: 'BalsamiqSans',
+                      fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(
                   'Nigeria',
@@ -129,9 +151,7 @@ class _ProfileState extends State<Profile> {
           children: [
             IconButton(
               icon: Icon(Icons.home_outlined),
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: ()=>_home(context: context, fullScreenDialog: true),
             ),
             IconButton(
               icon: Icon(Icons.location_on_outlined),
@@ -153,7 +173,7 @@ class _ProfileState extends State<Profile> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => _searchpage(context: context, fullScreenDialog: true),
         child: Icon(Icons.search_outlined),
       ),
     );
