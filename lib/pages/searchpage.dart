@@ -8,7 +8,6 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-
   void _profile({BuildContext context, bool fullScreenDialog = false}) {
     Navigator.push(
         context,
@@ -18,15 +17,16 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   void _home({BuildContext context, bool fullScreenDialog}) {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context)=>Start(), fullscreenDialog: fullScreenDialog)
-  );
-}
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => Start(), fullscreenDialog: fullScreenDialog));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.white,
@@ -81,14 +81,14 @@ class _SearchPageState extends State<SearchPage> {
               )),
         ),
       ),
-
+      
       bottomNavigationBar: BottomAppBar(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
               icon: Icon(Icons.home_outlined),
-              onPressed: ()=>_home(context: context, fullScreenDialog: true),
+              onPressed: () => _home(context: context, fullScreenDialog: true),
             ),
             IconButton(
               icon: Icon(Icons.location_on_outlined),
@@ -101,7 +101,8 @@ class _SearchPageState extends State<SearchPage> {
             ),
             IconButton(
               icon: Icon(Icons.account_circle_outlined),
-              onPressed: ()=>_profile(context: context, fullScreenDialog: true),
+              onPressed: () =>
+                  _profile(context: context, fullScreenDialog: true),
             ),
           ],
         ),
@@ -111,7 +112,7 @@ class _SearchPageState extends State<SearchPage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         //onPressed: ()=> _searchpage(context: context, fullScreenDialog: true),
-        onPressed: (){},
+        onPressed: () {},
         child: Icon(Icons.search_rounded),
       ),
     );
