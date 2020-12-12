@@ -5,6 +5,13 @@ class Profile extends StatefulWidget {
   _ProfileState createState() => _ProfileState();
 }
 
+void _home({BuildContext context, bool fullScreenDialog}) {
+    Navigator.pop(
+      context,
+      MaterialPageRoute(builder: (context) => Profile(), fullscreenDialog: fullScreenDialog)
+    );
+  }
+
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
@@ -13,9 +20,7 @@ class _ProfileState extends State<Profile> {
         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: ()=>_home(context: context, fullScreenDialog: true),
         ),
         backgroundColor: Colors.yellow.shade600,
         elevation: 2.0,

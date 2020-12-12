@@ -93,7 +93,7 @@ class _SignUpState extends State<SignUp> {
                                             hintText: 'Email Address',
                                             suffixIcon: Icon(
                                               Icons.email_rounded,
-                                              color: Colors.yellow.shade900,
+                                              color: Colors.yellow.shade600,
                                             )),
                                         validator: (value) =>
                                             _validateemail(value),
@@ -106,7 +106,7 @@ class _SignUpState extends State<SignUp> {
                                             hintText: 'Username',
                                             suffixIcon: Icon(
                                               Icons.account_circle_sharp,
-                                              color: Colors.yellow.shade900,
+                                              color: Colors.yellow.shade600,
                                             )),
                                         validator: (value) =>
                                             _validateusername(value),
@@ -120,7 +120,7 @@ class _SignUpState extends State<SignUp> {
                                             hintText: 'Password',
                                             suffixIcon: Icon(
                                               Icons.visibility_off,
-                                              color: Colors.yellow.shade900,
+                                              color: Colors.yellow.shade600,
                                             )),
                                         validator: (value) =>
                                             _validatepassword(value),
@@ -134,7 +134,7 @@ class _SignUpState extends State<SignUp> {
                                             hintText: 'Confirm Password',
                                             suffixIcon: Icon(
                                               Icons.visibility_off,
-                                              color: Colors.yellow.shade900,
+                                              color: Colors.yellow.shade600,
                                             )),
                                         validator: (value) =>
                                             _validateconfirmpassword(value),

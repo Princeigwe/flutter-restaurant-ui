@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:rstaurant_ui_app/pages/searchpage.dart';
 import 'package:rstaurant_ui_app/pages/solo.dart';
 import 'package:rstaurant_ui_app/pages/group.dart';
 import 'package:rstaurant_ui_app/pages/familypack.dart';
@@ -13,11 +13,13 @@ class Start extends StatefulWidget {
 }
 
 class _StartState extends State<Start> {
+  
   void _profile({BuildContext context, bool fullScreenDialog = false}) {
     Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context)=>Profile(), fullscreenDialog: fullScreenDialog)
-    );
+        context,
+        MaterialPageRoute(
+            builder: (context) => Profile(),
+            fullscreenDialog: fullScreenDialog));
   }
 
   var _foodheaders = [
@@ -124,6 +126,14 @@ class _StartState extends State<Start> {
         context,
         MaterialPageRoute(
             builder: (context) => Seafoodefo(),
+            fullscreenDialog: fullScreenDialog));
+  }
+
+  void _searchpage({BuildContext context, bool fullScreenDialog}) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => SearchPage(),
             fullscreenDialog: fullScreenDialog));
   }
 
@@ -395,7 +405,8 @@ class _StartState extends State<Start> {
             ),
             IconButton(
               icon: Icon(Icons.account_circle_outlined),
-              onPressed: () => _profile(context: context, fullScreenDialog: true),
+              onPressed: () =>
+                  _profile(context: context, fullScreenDialog: true),
             ),
           ],
         ),
@@ -404,7 +415,8 @@ class _StartState extends State<Start> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        //onPressed: ()=> _searchpage(context: context, fullScreenDialog: true),
+        onPressed: ()=>_searchpage(context: context, fullScreenDialog: true),
         child: Icon(Icons.search_outlined),
       ),
     );
